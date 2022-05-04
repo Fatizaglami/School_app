@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable-v24/ic_login_hero.xml" value="0.1525" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable-v24/ic_wave__1_.xml" value="0.1525" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable-v24/round_bg.xml" value="0.1525" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable/ic_action_add.xml" value="0.113" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1295" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_log.xml" value="0.112890625" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_login.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_professeur.xml" value="0.134765625" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_registre.xml" value="0.134765625" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/list_item.xml" value="0.112890625" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/professeur_item_layout.xml" value="0.134765625" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/register.xml" value="0.1346328195829556" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/register_activity.xml" value="0.11475409836065574" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/simple_list_item_l.xml" value="0.112890625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

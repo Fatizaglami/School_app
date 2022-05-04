@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">school_Manager1</string>
+        <string name="login_email_hint">Email</string>
+        <string name="login_password_hint">Password</string>
+    <string name="phone">PhoneNumber</string>
+    <string name="register">Register</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="pre">Prenom</string>
+    <string name="nom">Nom</string>
+    <string name="here_s_nyour_first_nstep_with_nus">Here\'s \nyour first\nstep with\nus!</string>
+    <string name="loading">loadiiing</string>
+
+
+</resources>
