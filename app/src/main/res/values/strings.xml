@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">school_Manager1</string>
-        <string name="login_email_hint">Email</string>
-        <string name="login_password_hint">Password</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
     <string name="phone">PhoneNumber</string>
     <string name="register">Register</string>
     <string name="already_have_an_account">Already have an account?</string>
@@ -9,6 +9,17 @@
     <string name="nom">Nom</string>
     <string name="here_s_nyour_first_nstep_with_nus">Here\'s \nyour first\nstep with\nus!</string>
     <string name="loading">loadiiing</string>
+    <string name="title_activity_nav_admin">NavAdmin</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
 
 
 </resources>

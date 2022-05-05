@@ -1,4 +1,4 @@
-package com.example.firsttest;
+package com.example.firsttest.models;
 
 public class User {
     public String nom, prenom, tel, email,password;

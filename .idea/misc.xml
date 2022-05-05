@@ -3,22 +3,50 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable-v24/ic_email.xml" value="0.1295" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1295" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable-v24/ic_lock.xml" value="0.1295" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable-v24/ic_login_hero.xml" value="0.1525" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable-v24/ic_wave__1_.xml" value="0.1525" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable-v24/round_bg.xml" value="0.1525" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable-v24/round_border.xml" value="0.1295" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable/add_prof.xml" value="0.1275" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable/ic_action_add.xml" value="0.113" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1295" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/drawable/ic_menu.xml" value="0.1" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_about.xml" value="0.1" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_ajouter_prof.xml" value="0.13961922030825022" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_forgot_password.xml" value="0.1" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_list_prpfesseur.xml" value="0.13191296464188576" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_log.xml" value="0.112890625" />
-        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_login.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_main.xml" value="0.13191296464188576" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_nav_admin.xml" value="0.1" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_professeur.xml" value="0.134765625" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_profile_admin.xml" value="0.13961922030825022" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_profile_etud.xml" value="0.13961922030825022" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/activity_registre.xml" value="0.134765625" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/app_bar_nav_admin.xml" value="0.1513467293715263" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/content_nav_admin.xml" value="0.1513467293715263" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/fragment_gallery.xml" value="0.1513467293715263" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/fragment_home.xml" value="0.1513467293715263" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/fragment_slideshow.xml" value="0.1513467293715263" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/item_drawer_main.xml" value="0.1" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/list_item.xml" value="0.112890625" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/main_nav_drawer.xml" value="0.1128739800543971" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/main_toolbar.xml" value="0.1" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/nav_header_nav_admin.xml" value="0.1513467293715263" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/professeur_item_layout.xml" value="0.134765625" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/register.xml" value="0.1346328195829556" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/register_activity.xml" value="0.11475409836065574" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/simple_list_item_1.xml" value="0.1115140525838622" />
         <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/layout/simple_list_item_l.xml" value="0.112890625" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/menu/activity_main_drawer.xml" value="0.1513467293715263" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/menu/menu_one.xml" value="0.1513467293715263" />
+        <entry key="..\:/Users/Yoga/AndroidStudioProjects/FirstTest/app/src/main/res/menu/nav_admin.xml" value="0.1513467293715263" />
       </map>
     </option>
   </component>

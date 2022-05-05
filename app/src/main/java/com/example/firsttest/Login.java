@@ -5,16 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.firsttest.adminUI.NavAdmin;
+import com.example.firsttest.adminUI.ProfileAdmin;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -22,11 +23,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity implements View.OnClickListener{
-    private TextView register;
+    private TextView register,forgotpassword;
     private FirebaseAuth mAuth;
     private EditText editTextEmail, editTextPassword;
     private Button signIn;
     private RadioGroup rgProfiles;
+    private ProgressBar prog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         rgProfiles= findViewById(R.id.grpRadion);
         rgProfiles.setOnClickListener(this);
 
+        forgotpassword=findViewById(R.id.forgotPassword);
+        forgotpassword.setOnClickListener(this);
+
         mAuth = FirebaseAuth.getInstance();
 
     }
@@ -57,6 +62,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                 break;
             case R.id.btnLogin:
                 userLogin();break;
+            case R.id.forgotPassword:
+                startActivity(new Intent(this,ForgotPassword.class));
+                break;
         }
 
     }
@@ -93,21 +101,35 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                         // No radio buttons are checked
                         Message.message(getApplicationContext(), "Please select a profile.");
                     }else {
-                      // One of the radio buttons is checked
-                      if (checkedId == R.id.btnradio1) {
-                          startActivity(new Intent(Login.this, Profile.class));
+                      //verifie the email
+                      FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                      if (user.isEmailVerified()) {
+                          // One of the radio buttons is checked
+                          if (checkedId == R.id.btnProf) {
+                              startActivity(new Intent(Login.this, ProfileProf.class));
+
+                          }
+                          if (checkedId == R.id.btnEtud) {
+                              //redirect to the profile of the student
+                              startActivity(new Intent(Login.this, ProfileEtud.class));
+
+                          } else {
+                              //redirect to the profile of the admin
+                              startActivity(new Intent(Login.this, ProfileAdmin.class));
+                          }
+
                       } else {
 
+                          user.sendEmailVerification();
+                          Toast.makeText(Login.this, "check your email to verify your account", Toast.LENGTH_LONG).show();
+
                       }
-
                   }
+                  }else {
+                          Toast.makeText(Login.this, "Failed to login ! try again!", Toast.LENGTH_LONG).show();
 
-                }else {
-                    Toast.makeText(Login.this, "Failed to login ! try again!", Toast.LENGTH_LONG).show();
 
-                }
-                }
-
+                      }}
         });
         }
 

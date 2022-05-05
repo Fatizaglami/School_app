@@ -45,12 +45,13 @@
         app:layout_constraintBottom_toBottomOf="@+id/topView"
         app:layout_constraintEnd_toStartOf="@+id/imageView" />
 
+
     <EditText
         android:id="@+id/inputEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/round_border"
         android:drawableStart="@drawable/ic_email"
@@ -64,7 +65,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2"
         tools:ignore="UnknownId" />
-
 
     <EditText
         android:id="@+id/inputPassword"
@@ -85,7 +85,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.527" />
+        app:layout_constraintVertical_bias="0.473" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -107,7 +107,7 @@
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/btnradio1"
+                android:id="@+id/btnProf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -117,12 +117,21 @@
                 android:textSize="16sp" />
 
             <RadioButton
-                android:id="@+id/btnRadio2"
+                android:id="@+id/btnEtud"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:buttonTint="#2196F3"
                 android:text="Etudiant"
+                android:textColor="@color/material_dynamic_neutral50"
+                android:textSize="16sp" />
+            <RadioButton
+                android:id="@+id/btnAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="#2196F3"
+                android:text="Admin"
                 android:textColor="@color/material_dynamic_neutral50"
                 android:textSize="16sp" />
         </RadioGroup>
