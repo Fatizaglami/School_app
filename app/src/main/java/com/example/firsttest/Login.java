@@ -105,20 +105,23 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                       FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                       if (user.isEmailVerified()) {
                           // One of the radio buttons is checked
-                          if (checkedId == R.id.btnProf) {
-                              startActivity(new Intent(Login.this, ProfileProf.class));
+
+                          switch (checkedId){
+                              case R.id.btnProf:
+                                  startActivity(new Intent(Login.this, DashboardProf.class));
+                                  break;
+                              case R.id.btnEtud:
+                                  startActivity(new Intent(Login.this, ProfileProf.class));
+                                  break;
+                              case R.id.btnAdmin:
+                                  startActivity(new Intent(Login.this, ProfileAdmin.class));
+                                 break;
 
                           }
-                          if (checkedId == R.id.btnEtud) {
-                              //redirect to the profile of the student
-                              startActivity(new Intent(Login.this, ProfileEtud.class));
 
-                          } else {
-                              //redirect to the profile of the admin
-                              startActivity(new Intent(Login.this, ProfileAdmin.class));
                           }
 
-                      } else {
+                      else {
 
                           user.sendEmailVerification();
                           Toast.makeText(Login.this, "check your email to verify your account", Toast.LENGTH_LONG).show();

@@ -11,7 +11,9 @@ public class Professeur implements Serializable {
     //private LinkedList<Groupe> liste_groupe;
     private String photo;
     private String departement;
+public Professeur(){
 
+}
     public Professeur(String nom, String prenom, String tel, String photo, String departement){
         this.nom= new String(nom);
         this.prenom= new String(prenom);
@@ -67,5 +69,16 @@ public class Professeur implements Serializable {
 
     public void setDepartement(String departement) {
         this.departement = departement;
+    }
+
+    @Override
+    public String toString() {
+        return "Professeur{" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", tel='" + tel + '\'' +
+                ", photo='" + photo + '\'' +
+                ", departement='" + departement + '\'' +
+                '}';
     }
 }

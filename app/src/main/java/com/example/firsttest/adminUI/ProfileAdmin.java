@@ -36,9 +36,10 @@ private Button btnListProf,btnListEtud,btnprofile,btnlogout;
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.btnListEtud:
+                startActivity(new Intent(this,ListEtud.class));
                 break;
             case R.id.btnListProf:
-                startActivity(new Intent(this,List_professeur.class));
+                startActivity(new Intent(this,ListProf.class));
                 break;
             case R.id.btnprofile:
                 //profile
@@ -48,7 +49,7 @@ private Button btnListProf,btnListEtud,btnprofile,btnlogout;
                 break;
         }
     }
-    private void showMenu(View v){
+    /*private void showMenu(View v){
         PopupMenu popupMenu = new PopupMenu(ProfileAdmin.this,v);
         popupMenu.getMenuInflater().inflate(R.menu.activity_main_drawer,popupMenu.getMenu());
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -71,6 +72,6 @@ private Button btnListProf,btnListEtud,btnprofile,btnlogout;
             }
         });
         popupMenu.show();
-    }
+    }*/
 
 }

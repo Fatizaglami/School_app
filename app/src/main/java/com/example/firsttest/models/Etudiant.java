@@ -4,11 +4,33 @@ public class Etudiant {
     private String nom;
     private String prenom;
     private String tel;
+    private String photo;
 
-    public Etudiant(String nom, String prenom, String tel){
+    public Etudiant(){}
+
+    @Override
+    public String toString() {
+        return "Etudiant{" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", tel='" + tel + '\'' +
+                ", photo='" + photo + '\'' +
+                '}';
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public Etudiant(String nom, String prenom, String tel,String photo){
         nom= new String(nom);
         prenom= new String(prenom);
         tel= new String(tel);
+        photo = new String(photo);
     }
     public String getNom() {
         return nom;

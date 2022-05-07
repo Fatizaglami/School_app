@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.firsttest" >
+    package="com.example.firsttest">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -8,19 +10,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FirstTest" >
+        android:theme="@style/Theme.FirstTest">
+        <activity
+            android:name=".adminUI.ListEtud"
+            android:exported="false" />
+        <activity
+            android:name=".adminUI.ListProf"
+            android:exported="false" />
         <activity
             android:name=".adminUI.About"
-
-            android:launchMode="singleTask"/>
+            android:launchMode="singleTask" />
         <activity
             android:name=".adminUI.Dashboard"
-
-            android:launchMode="singleTask"/>
+            android:launchMode="singleTask" />
         <activity
             android:name=".adminUI.NavAdmin"
-
-            android:launchMode="singleTask"/>
+            android:launchMode="singleTask" />
         <activity
             android:name=".ProfileProf"
             android:exported="false" />
@@ -40,7 +45,7 @@
             android:name=".ForgotPassword"
             android:exported="false" />
         <activity
-            android:name=".Professeur_activity"
+            android:name=".DashboardProf"
             android:exported="true" />
         <activity
             android:name=".Profile"
@@ -50,7 +55,7 @@
             android:exported="false" />
         <activity
             android:name=".Login"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
