@@ -14,7 +14,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.firsttest.adminUI.NavAdmin;
 import com.example.firsttest.adminUI.ProfileAdmin;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -108,7 +107,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
                           switch (checkedId){
                               case R.id.btnProf:
-                                  startActivity(new Intent(Login.this, DashboardProf.class));
+                                  startActivity(new Intent(Login.this, ProfileProf.class));
                                   break;
                               case R.id.btnEtud:
                                   startActivity(new Intent(Login.this, ProfileProf.class));

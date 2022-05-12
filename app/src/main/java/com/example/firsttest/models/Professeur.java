@@ -11,7 +11,17 @@ public class Professeur implements Serializable {
     //private LinkedList<Groupe> liste_groupe;
     private String photo;
     private String departement;
-public Professeur(){
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Professeur(){
 
 }
     public Professeur(String nom, String prenom, String tel, String photo, String departement){

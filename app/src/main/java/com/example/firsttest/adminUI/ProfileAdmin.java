@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.PopupMenu;
 
+import com.example.firsttest.About;
 import com.example.firsttest.R;
 
 public class ProfileAdmin extends AppCompatActivity implements View.OnClickListener {
@@ -39,13 +40,16 @@ private Button btnListProf,btnListEtud,btnprofile,btnlogout;
                 startActivity(new Intent(this,ListEtud.class));
                 break;
             case R.id.btnListProf:
-                startActivity(new Intent(this,ListProf.class));
+                startActivity(new Intent(this,ListProfUpd.class));
                 break;
             case R.id.btnprofile:
                 //profile
+               // startActivity(new Intent(this,ListProfUpd.class));
                 break;
+
             case R.id.btnlogout:
                 //quitter
+              //  startActivity(new Intent(this, About.class));
                 break;
         }
     }

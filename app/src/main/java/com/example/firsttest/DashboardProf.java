@@ -8,30 +8,34 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
-import com.example.firsttest.adminUI.ListEtud;
-import com.example.firsttest.adminUI.ListProf;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class DashboardProf extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class DashboardProf extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    FirebaseAuth mAuth;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_prof);
-
+        mAuth= FirebaseAuth.getInstance();
 
 
         /*-------------hooks-------------*/
+
         drawerLayout= findViewById(R.id.drawer_layout);
         navigationView= findViewById(R.id.nav_view);
         toolbar= findViewById(R.id.toolbar);
@@ -46,6 +50,7 @@ public class DashboardProf extends AppCompatActivity implements NavigationView.O
         menu.findItem(R.id.nav_login).setVisible(false);
 
 
+        navigationView.bringToFront();
         ActionBarDrawerToggle toogle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toogle);
         toogle.syncState();
@@ -67,30 +72,35 @@ public class DashboardProf extends AppCompatActivity implements NavigationView.O
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         switch(item.getItemId()){
-            case R.id.nav_home:
-                break; //because we already in Home screen
+          /*  case R.id.nav_home:
+                break; //because we already in Home screen*/
 
             case R.id.nav_profile:
                 Intent intent = new Intent(DashboardProf.this,ProfileProf.class);
                 startActivity(intent);break;
 
-            case R.id.nav_share:
-                Toast.makeText(this,"Share",Toast.LENGTH_SHORT).show();break;
-
-            case R.id.nav_prof:
-                startActivity(new Intent(DashboardProf.this, ListProf.class));
+            case R.id.nav_about:
+                Intent intent2 = new Intent(DashboardProf.this,About.class);
+                startActivity(intent2);
                 break;
-            case R.id.nav_etud:
-                startActivity(new Intent(DashboardProf.this, ListEtud.class));
+            case R.id.nav_home:
+               // startActivity(new Intent(this,Home.class));
                 break;
-            case R.id.nav_emp:
-               // startActivity(new Intent(DashboardProf.this, ListProf.class));
-                //to emploi activity
-                break;
-
+            case R.id.nav_logout:
+                mAuth.signOut();
+                signout();
         }
-         drawerLayout.closeDrawer(GravityCompat.START);
+        drawerLayout.closeDrawer(GravityCompat.START);
 
         return true;
     }
+
+    private void signout() {
+        Intent mainActivity = new Intent(DashboardProf.this,Login.class);
+        mainActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(mainActivity);
+        finish();
+    }
+
+
 }

@@ -5,6 +5,23 @@ public class Etudiant {
     private String prenom;
     private String tel;
     private String photo;
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Etudiant(String nom, String prenom, String tel, String photo, String email) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.tel = tel;
+        this.photo = photo;
+        this.email = email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public Etudiant(){}
 

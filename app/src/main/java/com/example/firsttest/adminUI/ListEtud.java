@@ -1,119 +1,125 @@
 package com.example.firsttest.adminUI;
 
-import androidx.annotation.NonNull;
+import static android.content.ContentValues.TAG;
+
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ProgressDialog;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 import com.example.firsttest.R;
+import com.example.firsttest.adapter.AdapterEtud;
+import com.example.firsttest.adapter.AdapterProf;
+import com.example.firsttest.interfaces.RecycleViewOnItemClick;
 import com.example.firsttest.models.Etudiant;
-import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
-import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.firebase.firestore.CollectionReference;
+import com.example.firsttest.show_item_etud;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ListEtud extends AppCompatActivity {
-    FirebaseFirestore db;
-    FirestoreRecyclerAdapter adapter;
+public class ListEtud extends AppCompatActivity implements RecycleViewOnItemClick {
+
     RecyclerView recyclerView;
+    ArrayList<Etudiant> etudiantArrayList;
+    AdapterEtud myAdater;
+    FirebaseFirestore db;
     ProgressDialog progressDialog;
+    TextView etud_nom,etud_prenom;
+    CircleImageView etud_photo;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_etud);
+
         //progress dialog
         progressDialog= new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Loading..");
         progressDialog.show();
-        recyclerView =findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
-        db =FirebaseFirestore.getInstance();
-        CollectionReference collRef =db.collection("etudiant");
-        Query query=collRef.orderBy("nom");
-        FirestoreRecyclerOptions<Etudiant> options =new FirestoreRecyclerOptions.Builder<Etudiant>()
-                .setQuery(query, Etudiant.class).build();
-        adapter =new FirestoreRecyclerAdapter<Etudiant,EtudiantVH>(options) {
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-            @NonNull
-            @Override
-            public EtudiantVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View layout= LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.item_etud, parent, false);
-                return new EtudiantVH(layout);
-            }
+        db = FirebaseFirestore.getInstance();
+        // dbr= FirebaseDatabase.getInstance().getReference("etudiant");
+        etudiantArrayList = new ArrayList<Etudiant>();
+        myAdater = new AdapterEtud(ListEtud.this,etudiantArrayList,this);
 
-            @Override
-            protected void onBindViewHolder(@NonNull EtudiantVH holder, int position, @NonNull Etudiant model) {
-                holder.etud_nom.setText(model.getNom());
-                holder.etud_tel.setText(model.getTel());
-                holder.etud_prenom.setText(model.getPrenom());
-                Glide.with(ListEtud.this)
-                        .load(model.getPhoto())
-                        .placeholder(R.drawable.profile)
-                        .centerCrop()
-                        .into(holder.etud_photo);
-            }
+        recyclerView.setAdapter(myAdater);
 
-        };
-        recyclerView.setAdapter(adapter);
-        if(progressDialog.isShowing())
-            progressDialog.dismiss();
-
-            }
-
-            /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.menu_item_add:
-                startActivity(new Intent(MainActivity.this, AddContactActivity.class));
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        adapter.startListening();
 
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
-        adapter.stopListening();
+    protected void onResume() {
+        super.onResume();
+        getListEtuds();
     }
 
-    class EtudiantVH extends RecyclerView.ViewHolder{
-        TextView etud_prenom,etud_tel, etud_nom;
-        CircleImageView etud_photo;
-        public EtudiantVH(@NonNull View itemView) {
-            super(itemView);
-            etud_nom = itemView.findViewById(R.id.etud_nom);
-            etud_prenom= itemView.findViewById(R.id.etud_prenom);
-            etud_tel= itemView.findViewById(R.id.etud_tel);
-            etud_photo=itemView.findViewById(R.id.etud_photo);
-        }
+    private void getListEtuds() {
+        etudiantArrayList.clear();
+
+        progressDialog.setMessage("Loading ...");
+        progressDialog.show();
+        db.collection("etudiant").orderBy("nom", Query.Direction.ASCENDING).get()
+                .addOnCompleteListener(task ->{
+                    if(task.isSuccessful()){
+
+                        for(QueryDocumentSnapshot dc : task.getResult()) {
+
+                            etudiantArrayList.add(dc.toObject(Etudiant.class));
+
+                        }
+
+                    }else{
+                        Log.w(TAG, "Error", task.getException());
+                    }
+
+                    myAdater.notifyDataSetChanged();
+
+
+
+                    if(progressDialog.isShowing())
+                        progressDialog.dismiss();
+
+
+
+                });
+
+
     }
 
+    @Override
+    public void onItemClick(int position) {
+        String us = db.collection("etudiant").getId();
+        Intent intent=new Intent(ListEtud.this, show_item_etud.class);
+        // intent.putExtra("etud_photo",etudiantArrayList.get(position).getPhoto());
+        intent.putExtra("etud_nom",etudiantArrayList.get(position).getNom());
+        intent.putExtra("etud_prenom",etudiantArrayList.get(position).getPrenom());
+        intent.putExtra("etud_tel",etudiantArrayList.get(position).getTel());
+        intent.putExtra("etud_email",us);
+
+        startActivity(intent);
+    }
+
+    @Override
+    public void onLongItemClick(int position) {
+        //to delete an item
+        etudiantArrayList.remove(position);
+        myAdater.notifyItemRemoved(position);
+    }
 }

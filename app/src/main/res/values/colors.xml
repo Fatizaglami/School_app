@@ -21,4 +21,7 @@
     <color name="whiteTextColor">#FFFFFF</color>
     <color name="primaryTextColor">#11CFC5</color>
 
+    <color name="loginbuttonclr">#5C6BC0</color>
+    <color name="blue">#0000FF</color>
+
 </resources>

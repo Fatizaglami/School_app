@@ -3,6 +3,9 @@
     package="com.example.firsttest">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
 
     <application
         android:allowBackup="true"
@@ -12,20 +15,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstTest">
         <activity
+            android:name=".show_item_etud"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity
+            android:name=".show_item_prof"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity
             android:name=".adminUI.ListEtud"
             android:exported="false" />
         <activity
-            android:name=".adminUI.ListProf"
+            android:name=".adminUI.ListProfUpd"
             android:exported="false" />
-        <activity
-            android:name=".adminUI.About"
-            android:launchMode="singleTask" />
-        <activity
-            android:name=".adminUI.Dashboard"
-            android:launchMode="singleTask" />
-        <activity
-            android:name=".adminUI.NavAdmin"
-            android:launchMode="singleTask" />
         <activity
             android:name=".ProfileProf"
             android:exported="false" />
@@ -37,10 +39,8 @@
             android:exported="false" />
         <activity
             android:name=".AjouterProf"
-            android:exported="false" />
-        <activity
-            android:name=".adminUI.List_professeur"
-            android:exported="false" />
+            android:exported="false"
+           />
         <activity
             android:name=".ForgotPassword"
             android:exported="false" />
@@ -48,10 +48,13 @@
             android:name=".DashboardProf"
             android:exported="true" />
         <activity
-            android:name=".Profile"
-            android:exported="false" />
+            android:name=".Home"
+            android:exported="true" />
         <activity
             android:name=".Register"
+            android:exported="false" />
+        <activity
+            android:name=".About"
             android:exported="false" />
         <activity
             android:name=".Login"

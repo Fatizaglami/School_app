@@ -4,16 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".adminUI.ListProf">
 
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="295dp"
+        android:layout_height="52dp"
+        android:background="@drawable/round_border"
+        android:drawableStart="@drawable/search"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Search"
+        android:inputType="text"
+        android:padding="16dp"
+        android:paddingStart="30dp"
+        android:paddingTop="30dp"
+        tools:ignore="MissingConstraints,UnknownId"
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="34dp" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="409dp"
-        android:layout_height="889dp"
+        android:id="@+id/recyclerView"
+        android:layout_width="410dp"
+        android:layout_height="726dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        android:id="@+id/recyclerView"/>
+        android:layout_marginTop="40dp"/>
+
+    <ImageButton
+        android:id="@+id/btnSearch"
+        android:layout_width="61dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/search"
+        app:srcCompat="@drawable/sea"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Add prof"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="131dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

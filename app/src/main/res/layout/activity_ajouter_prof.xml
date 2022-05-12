@@ -1,9 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AjouterProf">
+    android:padding="10dp"
+    tools:context=".AjouterProf"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginTop="50dp"
+            android:fontFamily="cursive"
+            android:text="Ajouter professeur"
+            android:textColor="@color/black"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/prof_photo"
+        android:layout_width="127dp"
+        android:layout_height="104dp"
+        android:foregroundGravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/profile"
+        app:civ_border_color="#C0C0C0"
+        app:civ_border_width="1dp"
+
+
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="139dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/lin">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="selectionner"
+            android:layout_marginRight="6dp"
+            android:id="@+id/btnSel"/>
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="upload"
+    android:layout_marginRight="6dp"
+    android:id="@+id/btnUpload"
+    android:visibility="gone"/>
+    </LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Spotter.TextInputLayout"
+        android:id="@+id/profNomLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/lin"
+        android:hint="Nom">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/prof_nom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Spotter.TextInputLayout"
+        android:id="@+id/profNameLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profNomLay"
+        android:layout_marginTop="20dp"
+        android:hint="Prenom">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/prof_prenom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Spotter.TextInputLayout"
+        android:id="@+id/depLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profNameLay"
+        android:layout_marginTop="20dp"
+        android:hint="Departement">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/prof_dep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Spotter.TextInputLayout"
+        android:id="@+id/emailProf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/depLayout"
+        android:layout_marginTop="20dp"
+        android:hint="Email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/prof_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Spotter.TextInputLayout"
+        android:id="@+id/telProf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailProf"
+        android:layout_marginTop="20dp"
+        android:hint="Telephone">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/prof_tel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAdd"
+        android:layout_below="@+id/telProf"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="10dp"
+        android:text="Register" />
+
+
+
+
+</LinearLayout>
