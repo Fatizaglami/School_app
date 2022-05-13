@@ -9,7 +9,7 @@
         android:id="@+id/topView"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:background="#a2d9ff"
+        android:background="@color/purple_700"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,93 +22,275 @@
         app:layout_constraintTop_toBottomOf="@+id/topView" />
 
 
-    <TextView
-        android:id="@+id/textName"
-        android:layout_width="282dp"
-        android:layout_height="80dp"
-        android:layout_marginBottom="28dp"
-        android:text="Name"
-        android:textColor="@color/white"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/topView"
-        tools:layout_editor_absoluteX="32dp"
-        tools:ignore="MissingConstraints" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_vertical"
-        app:layout_constraintTop_toBottomOf="@+id/view2"
-
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="43dp">
-
-
-        <Button
-            android:id="@+id/btnListEtud"
-            android:layout_width="261dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="160dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/round_bg"
-            android:gravity="center"
-            android:text="Etudiants"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:id="@+id/imageBack"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:src="@drawable/round_back"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topView" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
-        <Button
-            android:id="@+id/btnListProf"
-            android:layout_width="261dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/round_bg"
-            android:gravity="center"
-            android:text="Professeurs"
-            android:textSize="16sp"
-            android:textStyle="bold"
+        <TextView
+            android:layout_width="@dimen/_44sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:id="@+id/logout"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="Logout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topView" />
-
-        <Button
-            android:id="@+id/btnprofile"
-            android:layout_width="261dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/round_bg"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:gravity="center"
             android:text="Profile"
-            android:textSize="16sp"
+            android:textSize="35dp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topView" />
+            android:fontFamily="cursive"
+            app:layout_constraintBottom_toBottomOf="@id/imageBack"
+            app:layout_constraintEnd_toStartOf="@id/logout"
+            app:layout_constraintStart_toEndOf="@id/imageBack"
+            app:layout_constraintTop_toTopOf="@id/imageBack"
+            />
 
-        <Button
-            android:id="@+id/btnlogout"
-            android:layout_width="261dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/round_bg"
-            android:gravity="center"
-            android:text="Logout"
-            android:textSize="16sp"
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imageProfile"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_90sdp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/per"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:riv_oval="true" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nom_prenom"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="Zaglami fatima zahra"
+            android:textSize="@dimen/_18ssp"
+            android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topView" />
-    </LinearLayout>
+            app:layout_constraintTop_toBottomOf="@id/imageProfile"/>
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nom_prenom"/>
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="#FDFDFD"
+                android:src="@drawable/person" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nom"
+                android:textStyle="bold"
+                android:textColor="@color/teal_700"
+                android:textSize="@dimen/_16ssp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/editNom"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:hint="Zaglami"
+                android:inputType="text"
+
+
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linear1"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="#FDFDFD"
+                android:src="@drawable/person" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prenom"
+                android:textStyle="bold"
+                android:textColor="@color/teal_700"
+                android:textSize="@dimen/_16ssp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/editPrenom"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:hint="Fatima zahra"
+                android:inputType="text"
+
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linear2"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="#FDFDFD"
+                android:src="@drawable/ic_baseline_email_24" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textStyle="bold"
+                android:textColor="@color/teal_700"
+                android:textSize="@dimen/_16ssp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/editEmail"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:hint="zagFati@gmail.com"
+                android:inputType="text"
+
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_4sdp"
+            android:paddingRight="@dimen/_4sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linear3"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="#FDFDFD"
+                android:src="@drawable/domain" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="departement"
+                android:textStyle="bold"
+                android:textColor="@color/teal_700"
+                android:textSize="@dimen/_16ssp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/editDepartement"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:hint="IWIM"
+                android:inputType="text"
+
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_4sdp"
+            android:paddingRight="@dimen/_4sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linear4"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="#FDFDFD"
+                android:src="@drawable/phone" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Telephone"
+                android:textStyle="bold"
+                android:textColor="@color/teal_700"
+                android:textSize="@dimen/_16ssp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/editphone"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:hint="Tel"
+                android:inputType="text"
+
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

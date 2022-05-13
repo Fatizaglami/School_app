@@ -1,4 +1,4 @@
-package com.example.firsttest;
+package com.example.firsttest.adminUI;
 
 
 import android.annotation.SuppressLint;
@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import com.bumptech.glide.Glide;
+import com.example.firsttest.R;
 import com.example.firsttest.adminUI.ListEtud;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

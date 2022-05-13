@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center">
-   <!-- tools:context=".EditProf" -->
+    <!-- tools:context=".EditProf" -->
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/editphoto"
@@ -40,13 +40,6 @@
         android:layout_marginTop="10dp"
         android:textSize="20sp"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Departement"
-        android:id="@+id/editdep"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -59,8 +52,8 @@
     <Button
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Enregistrer"
-        android:id="@+id/btnUpdate"
+        android:text="Supprimer"
+        android:id="@+id/btnDelete"
         android:background="@drawable/round_bg"
         android:textColor="#fff"
         android:layout_gravity="center"

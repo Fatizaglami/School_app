@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".show_item_prof">
+    tools:context=".adminUI.show_item_prof">
 
   <!--  <ImageView
         android:id="@+id/prof_photo"
@@ -85,6 +85,7 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="6dp"
             android:src="@drawable/call"
+
             app:fabSize="auto"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="34dp"

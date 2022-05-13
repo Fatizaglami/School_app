@@ -1,4 +1,4 @@
-package com.example.firsttest.adminUI;
+package com.example.firsttest.profUI;
 
 import static android.content.ContentValues.TAG;
 
@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firsttest.R;
 import com.example.firsttest.adapter.AdapterEtud;
+import com.example.firsttest.adminUI.show_item_etud;
 import com.example.firsttest.interfaces.RecycleViewOnItemClick;
 import com.example.firsttest.models.Etudiant;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ListEtud extends AppCompatActivity implements RecycleViewOnItemClick, View.OnClickListener {
+public class MesEtudiants extends AppCompatActivity implements RecycleViewOnItemClick {
 
     RecyclerView recyclerView;
     ArrayList<Etudiant> etudiantArrayList;
@@ -41,7 +42,7 @@ public class ListEtud extends AppCompatActivity implements RecycleViewOnItemClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_etud);
+        setContentView(R.layout.activity_mes_etudiants);
 
         //progress dialog
         progressDialog= new ProgressDialog(this);
@@ -52,15 +53,14 @@ public class ListEtud extends AppCompatActivity implements RecycleViewOnItemClic
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        btnAdd = findViewById(R.id.btnAdd);
-        btnAdd.setOnClickListener(this);
+
 
 
 
 
         db = FirebaseFirestore.getInstance();
         etudiantArrayList = new ArrayList<Etudiant>();
-        myAdater = new AdapterEtud(ListEtud.this,etudiantArrayList,this);
+        myAdater = new AdapterEtud(MesEtudiants.this,etudiantArrayList,this);
 
         recyclerView.setAdapter(myAdater);
 
@@ -79,7 +79,7 @@ public class ListEtud extends AppCompatActivity implements RecycleViewOnItemClic
 
         progressDialog.setMessage("Loading ...");
         progressDialog.show();
-        db.collection("etudiant").orderBy("nom", Query.Direction.ASCENDING).get()
+        db.collection("mesEtuds").orderBy("nom", Query.Direction.ASCENDING).get()
                 .addOnCompleteListener(task ->{
                     if(task.isSuccessful()){
 
@@ -114,8 +114,8 @@ public class ListEtud extends AppCompatActivity implements RecycleViewOnItemClic
 
     @Override
     public void onItemClick(int position) {
-        String us = db.collection("etudiant").getId();
-        Intent intent=new Intent(ListEtud.this, show_item_etud.class);
+        String us = db.collection("mesEtuds").getId();
+        Intent intent=new Intent(MesEtudiants.this, show_item_etud.class);
         // intent.putExtra("etud_photo",etudiantArrayList.get(position).getPhoto());
         intent.putExtra("etud_nom",etudiantArrayList.get(position).getNom());
         intent.putExtra("etud_prenom",etudiantArrayList.get(position).getPrenom());
@@ -132,14 +132,5 @@ public class ListEtud extends AppCompatActivity implements RecycleViewOnItemClic
         myAdater.notifyItemRemoved(position);
     }
 
-    @Override
-    public void onClick(View view) {
-        if(view.getId()==R.id.btnAdd){
-            startActivity(new Intent(this, AjouterEtud.class));
 
-
-
-        }
-
-    }
 }

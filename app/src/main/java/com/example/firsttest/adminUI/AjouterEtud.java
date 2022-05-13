@@ -1,11 +1,10 @@
-package com.example.firsttest;
+package com.example.firsttest.adminUI;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -18,13 +17,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.firsttest.adminUI.ListProfUpd;
-import com.example.firsttest.databinding.ActivityAjouterProfBinding;
-import com.example.firsttest.models.Professeur;
+import com.example.firsttest.R;
+import com.example.firsttest.databinding.ActivityAjouterEtudBinding;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -38,26 +36,26 @@ import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class AjouterProf extends AppCompatActivity {
+public class AjouterEtud extends AppCompatActivity {
 
     SimpleDateFormat formatter;
     Date now;
     String fileName;
 
-    EditText prof_nom,prof_prenom,prof_dep,prof_tel,prof_email;
+    EditText etud_nom,etud_prenom,etud_dep,etud_tel,etud_email;
     MaterialButton btnAdd;
     FirebaseFirestore db;
     ProgressDialog progressDialog;
-    CircleImageView prof_photo;
+    CircleImageView etud_photo;
     Button btnSel,btnUpload;
-    ActivityAjouterProfBinding binding;
+    ActivityAjouterEtudBinding binding;
     Uri imgUri;
     StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityAjouterProfBinding.inflate(getLayoutInflater());
+        binding = ActivityAjouterEtudBinding.inflate(getLayoutInflater());
 
         setContentView(binding.getRoot());
 
@@ -67,15 +65,14 @@ public class AjouterProf extends AppCompatActivity {
         //progress dialog
         progressDialog= new ProgressDialog(this);
         progressDialog.setCancelable(false);
-      //  progressDialog.setMessage("Loading..");
-      //  progressDialog.show();
+        //  progressDialog.setMessage("Loading..");
+        //  progressDialog.show();
         db =FirebaseFirestore.getInstance();
-        prof_nom=findViewById(R.id.prof_nom);
-        prof_prenom=findViewById(R.id.prof_prenom);
-        prof_dep=findViewById(R.id.prof_dep);
-        prof_tel=findViewById(R.id.prof_tel);
-        prof_email=findViewById(R.id.prof_email);
-        prof_photo=findViewById(R.id.prof_photo);
+        etud_nom=findViewById(R.id.etud_nom);
+        etud_prenom=findViewById(R.id.etud_prenom);
+        etud_tel=findViewById(R.id.etud_tel);
+        etud_email=findViewById(R.id.etud_email);
+        etud_photo=findViewById(R.id.etud_photo);
 
         binding.btnSel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,34 +92,30 @@ public class AjouterProf extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nom = prof_nom.getText().toString();
-                String prenom = prof_prenom.getText().toString();
-                String tel = prof_tel.getText().toString();
-                String email = prof_email.getText().toString();
-                String dep = prof_dep.getText().toString();
-
-                //Professeur prof = new Professeur(nom, prenom, email, tel, dep);
-
-                Map<String,Object> prof = new HashMap<>();
-                prof.put("nom",nom);
-                prof.put("prenom",prenom);
-                prof.put("departement",dep);
-                prof.put("tel",tel);
-                prof.put("photo","/photos/professeurs/"+fileName);
+                String nom = etud_nom.getText().toString();
+                String prenom = etud_prenom.getText().toString();
+                String tel = etud_tel.getText().toString();
+                String email = etud_email.getText().toString();
 
 
-                db.collection("professeur").document(email).set(prof).addOnSuccessListener(new OnSuccessListener<Void>() {
+                Map<String,Object> etud = new HashMap<>();
+                etud.put("nom",nom);
+                etud.put("prenom",prenom);
+                etud.put("tel",tel);
+                etud.put("photo","/photos/etudiants/"+fileName);
+
+
+                db.collection("etudiant").document(email).set(etud).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         uploadImage();
-                        Toast.makeText(AjouterProf.this,"added successful",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AjouterEtud.this,"added successful",Toast.LENGTH_SHORT).show();
 
 
-                        prof_nom.setText(" ");
-                        prof_email.setText(" ");
-                        prof_tel.setText(" ");
-                        prof_dep.setText(" ");
-                        prof_prenom.setText(" ");
+                        etud_nom.setText(" ");
+                        etud_email.setText(" ");
+                        etud_tel.setText(" ");
+                        etud_prenom.setText(" ");
 
                     }
 
@@ -130,7 +123,7 @@ public class AjouterProf extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
 
-                        Toast.makeText(AjouterProf.this,"Failed to add",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AjouterEtud.this,"Failed to add",Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
                     }
                 });
@@ -138,19 +131,19 @@ public class AjouterProf extends AppCompatActivity {
         });
 
     }
-//upload the image to the firebase storage using the name of the current date
+    //upload the image to the firebase storage using the name of the current date
     private void uploadImage() {
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Enregistrement...");
         progressDialog.show();
-        storageReference = FirebaseStorage.getInstance().getReference("photos/professeurs/"+fileName);
+        storageReference = FirebaseStorage.getInstance().getReference("photos/etudiants/"+fileName);
         storageReference.putFile(imgUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                       binding.profPhoto.setImageURI(null);
-                        Toast.makeText(AjouterProf.this,"uploaded",Toast.LENGTH_SHORT).show();
+                        binding.etudPhoto.setImageURI(null);
+                        Toast.makeText(AjouterEtud.this,"uploaded",Toast.LENGTH_SHORT).show();
                         if(progressDialog.isShowing())
                             progressDialog.dismiss();
                     }
@@ -159,12 +152,12 @@ public class AjouterProf extends AppCompatActivity {
             public void onFailure(@NonNull Exception e) {
                 if(progressDialog.isShowing())
                     progressDialog.dismiss();
-                Toast.makeText(AjouterProf.this," failed uploaded",Toast.LENGTH_SHORT).show();
+                Toast.makeText(AjouterEtud.this," failed uploaded",Toast.LENGTH_SHORT).show();
 
             }
         });
     }
-//to select the image from the phone (drive..)
+    //to select the image from the phone (drive..)
     private void selectImage() {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_PICK);
@@ -180,8 +173,8 @@ public class AjouterProf extends AppCompatActivity {
                         // There are no request codes
                         Intent data = result.getData();
                         imgUri = data.getData();
-                        binding.profPhoto.setImageURI(imgUri);
-                       // binding.prof_photo.setImageURI(imgUri);
+                        binding.etudPhoto.setImageURI(imgUri);
+                        // binding.etud_photo.setImageURI(imgUri);
                     }
                 }
             });

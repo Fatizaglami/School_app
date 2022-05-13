@@ -59,9 +59,9 @@
     <Button
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Delete"
+        android:text="Supprimer"
         android:id="@+id/btnDelete"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/round_bg"
         android:textColor="#fff"
         android:layout_gravity="center"
         android:textSize="20sp"

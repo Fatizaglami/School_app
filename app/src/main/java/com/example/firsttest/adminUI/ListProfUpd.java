@@ -8,20 +8,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.firsttest.AjouterProf;
 import com.example.firsttest.R;
 import com.example.firsttest.adapter.AdapterProf;
 import com.example.firsttest.interfaces.RecycleViewOnItemClick;
 import com.example.firsttest.models.Professeur;
-import com.example.firsttest.show_item_prof;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;

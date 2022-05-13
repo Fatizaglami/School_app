@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.FirstTest" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/purple_200</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -32,7 +32,7 @@
 
     <style name="modifiedEditText" parent="parent">
         <item name="android:textSize">@dimen/newsMoreTextSize</item>
-        <item name="android:backgroundTint">@color/primaryTextColor</item>
+        <item name="android:backgroundTint">@color/purple_200</item>
     </style>
 
     <style name="viewParent.headerText.NoMode">
@@ -54,7 +54,7 @@
 
     <style name="Theme.FirstTest.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="hintTextColor">@color/purple_500</item>
+        <item name="hintTextColor">@color/purple_700</item>
         <item name="android:paddingBottom">8dp</item>
         <item name="boxStrokeColor">@color/loginbuttonclr</item>
     </style>

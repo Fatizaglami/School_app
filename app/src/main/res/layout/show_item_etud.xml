@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".show_item_etud">
+    tools:context=".adminUI.show_item_etud">
 
     <!--  <ImageView
           android:id="@+id/etud_photo"

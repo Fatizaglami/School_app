@@ -14,7 +14,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.firsttest.adminUI.ProfileAdmin;
+import com.example.firsttest.adminUI.DashboardAdmin;
+import com.example.firsttest.etudUI.DashboardEtud;
+import com.example.firsttest.profUI.DashboardProf;
+import com.example.firsttest.profUI.ProfileProf;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -107,13 +110,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
                           switch (checkedId){
                               case R.id.btnProf:
-                                  startActivity(new Intent(Login.this, ProfileProf.class));
+                                  startActivity(new Intent(Login.this, DashboardProf.class));
                                   break;
                               case R.id.btnEtud:
-                                  startActivity(new Intent(Login.this, ProfileProf.class));
+                                  startActivity(new Intent(Login.this, DashboardEtud.class));
                                   break;
                               case R.id.btnAdmin:
-                                  startActivity(new Intent(Login.this, ProfileAdmin.class));
+                                  startActivity(new Intent(Login.this, DashboardAdmin.class));
                                  break;
 
                           }

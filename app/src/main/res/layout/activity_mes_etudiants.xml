@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".adminUI.ListEtud">
+    tools:context=".profUI.MesEtudiants">
 
 
     <EditText
@@ -19,12 +19,11 @@
         android:hint="Search"
         android:inputType="text"
         android:padding="16dp"
-
         android:paddingStart="30dp"
-        android:paddingTop="100dp"
+        android:paddingTop="30dp"
         tools:ignore="MissingConstraints,UnknownId"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="89dp" />
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="34dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -37,18 +36,8 @@
         tools:ignore="MissingConstraints"
         android:layout_marginTop="40dp"/>
 
-    <Button
-        android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Ajouter un etudiant"
-        android:textColor="@color/teal_700"
-        android:gravity="center"
 
-        app:layout_constraintTop_toBottomOf="@+id/search"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="131dp" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

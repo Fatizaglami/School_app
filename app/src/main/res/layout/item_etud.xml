@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:paddingLeft="15dp"
-                android:text="ZAGLAMI"
+                android:text="Zaglami fatima zahra"
                 android:textAlignment="center"
                 android:textSize="20dp"
                 tools:ignore="MissingConstraints"
@@ -62,6 +62,39 @@
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="238dp" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="41dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnEdit"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/edit"
+                    app:fabSize="auto"
+                    tools:ignore="MissingConstraints"
+                    />
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnDel"
+
+                    android:layout_marginLeft="90dp"
+                    android:src="@drawable/delete"
+                    app:fabSize="auto"
+                    tools:ignore="MissingConstraints"
+                    />
+
+
+
+            </LinearLayout>
         </LinearLayout>
 
 

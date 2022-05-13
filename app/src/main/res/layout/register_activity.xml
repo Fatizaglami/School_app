@@ -28,10 +28,16 @@
 
                 <TextView
                     style="@style/viewParent.headerText.NoMode"
+                    android:layout_width="162dp"
+                    android:layout_height="141dp"
                     android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:text="@string/here_s_nyour_first_nstep_with_nus"
-                    android:textColor="@color/whiteTextColor" />
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="cursive"
+                    android:text="Merci de remplir tout les champs"
+                    android:textColor="@color/whiteTextColor"
+                    android:textSize="35dp"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -56,91 +62,85 @@
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textInputNom"
-                        style="@style/parent"
-                        android:layout_marginTop="@dimen/loginViewsMargin">
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        style="@style/Widget.Spotter.TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/lin"
+                        android:hint="Nom">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextName"
-                            style="@style/modifiedEditText"
-                            android:background="@color/white"
-                            android:hint="@string/nom"
-                            android:inputType="textPersonName"
-                            android:maxLines="1"
-
-                            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:maxLines="1" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textInputPrenom"
-                        style="@style/parent"
-                        android:layout_marginTop="@dimen/loginViewsMargin">
-
-                        <EditText
+                        style="@style/Widget.Spotter.TextInputLayout"
+                        android:hint="@string/pre"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextPrenom"
-                            style="@style/modifiedEditText"
-                            android:background="@color/black"
-                            android:hint="@string/pre"
-                            android:inputType="textPersonName"
-                            android:maxLines="1"
-                            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
-
-                            />
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:maxLines="1" />
 
                     </com.google.android.material.textfield.TextInputLayout>
-
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textInputEmail"
-                        style="@style/parent"
-                        android:layout_marginTop="@dimen/loginViewsMargin">
-
-                        <EditText
+                        style="@style/Widget.Spotter.TextInputLayout"
+                        android:hint="Email"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextEmail"
-                            style="@style/modifiedEditText"
-                            android:background="@color/black"
-                            android:hint="@string/login_email_hint"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
-                            android:maxLines="1"
-                            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
-
-                            />
+                            android:maxLines="1" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textInputMobile"
-                        style="@style/parent"
-                        android:layout_marginTop="@dimen/loginViewsMargin">
-
-                        <EditText
+                        style="@style/Widget.Spotter.TextInputLayout"
+                        android:hint="Telepone"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextMobile"
-                            style="@style/modifiedEditText"
-                            android:background="@color/white"
-                            android:hint="@string/phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:inputType="phone"
-                            android:maxLines="1"
-                            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
-
-                            />
+                            android:maxLines="1" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textInputPassword"
-                        style="@style/parent"
-                        android:layout_marginTop="@dimen/loginViewsMargin">
-
-                        <EditText
+                        style="@style/Widget.Spotter.TextInputLayout"
+                        android:hint="Mot de passe"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextPassword"
-                            style="@style/modifiedEditText"
-                            android:background="@color/whiteTextColor"
-                            android:hint="Password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:inputType="textPassword"
-                            android:maxLines="1"
-
-                            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                            android:maxLines="1" />
 
                     </com.google.android.material.textfield.TextInputLayout>
+
+
 
 
                     <Button
@@ -151,7 +151,7 @@
                         android:layout_marginStart="50dp"
                         android:layout_marginTop="32dp"
                         android:layout_marginEnd="50dp"
-                        android:text="@string/register"
+                        android:text="S'inscrire"
 
                         />
 
@@ -161,7 +161,7 @@
                         style="@style/parent"
 
                         android:layout_marginTop="@dimen/loginViewsMargin"
-                        android:text="@string/already_have_an_account"
+                        android:text="Vous avez deja un compte ? cliquez ici "
                         android:textAlignment="center"
                         android:textColor="@color/themeColor"
                         android:textSize="17sp"

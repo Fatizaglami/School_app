@@ -3,9 +3,8 @@
     package="com.example.firsttest">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,11 +14,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstTest">
         <activity
-            android:name=".show_item_etud"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+            android:name=".DownloadEmploi"
+            android:exported="false" />
         <activity
-            android:name=".show_item_prof"
+            android:name=".etudUI.DashboardEtud"
+            android:exported="false" />
+        <activity
+            android:name=".profUI.MesEtudiants"
+            android:exported="false" />
+        <activity
+            android:name=".adminUI.AjouterEtud"
+            android:exported="false" />
+        <activity
+            android:name=".adminUI.EmploiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".adminUI.show_item_etud"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity
+            android:name=".adminUI.show_item_prof"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
@@ -29,23 +43,25 @@
             android:name=".adminUI.ListProfUpd"
             android:exported="false" />
         <activity
-            android:name=".ProfileProf"
+            android:name=".profUI.ProfileProf"
             android:exported="false" />
         <activity
-            android:name=".ProfileEtud"
+            android:name=".etudUI.ProfileEtud"
             android:exported="false" />
         <activity
             android:name=".adminUI.ProfileAdmin"
             android:exported="false" />
         <activity
-            android:name=".AjouterProf"
-            android:exported="false"
-           />
+            android:name=".adminUI.DashboardAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".adminUI.AjouterProf"
+            android:exported="false" />
         <activity
             android:name=".ForgotPassword"
             android:exported="false" />
         <activity
-            android:name=".DashboardProf"
+            android:name=".profUI.DashboardProf"
             android:exported="true" />
         <activity
             android:name=".Home"

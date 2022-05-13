@@ -2,13 +2,8 @@ package com.example.firsttest.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 
-
-import com.example.firsttest.DashboardProf;
-import com.example.firsttest.ProfileProf;
-import com.example.firsttest.dataAccess.MyAppGlideModule;
 
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.firsttest.R;
-import com.example.firsttest.adminUI.ListProfUpd;
 import com.example.firsttest.interfaces.RecycleViewOnItemClick;
 import com.example.firsttest.models.Professeur;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,19 +24,13 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FieldPath;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
-import com.example.firsttest.adminUI.ListProfUpd;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -252,6 +239,7 @@ public class AdapterProf extends RecyclerView.Adapter<AdapterProf.myViewHolder> 
                                                 public void onSuccess(Void aVoid) {
                                                     System.out.println("okkk");
                                                     dialogPlus.dismiss();
+
 
                                                 }
                                             })

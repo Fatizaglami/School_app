@@ -1,4 +1,4 @@
-package com.example.firsttest;
+package com.example.firsttest.etudUI;
 
 
 import android.content.Intent;
@@ -7,14 +7,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 
-import com.google.android.material.navigation.NavigationView;
+import com.example.firsttest.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -27,7 +25,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.makeramen.roundedimageview.RoundedImageView;
 
-public class ProfileProf extends AppCompatActivity implements View.OnClickListener {
+public class ProfileEtud extends AppCompatActivity implements View.OnClickListener {
     private RoundedImageView profileImageView;
     private Button editButton;
     AppCompatImageView backImage;
@@ -42,7 +40,7 @@ public class ProfileProf extends AppCompatActivity implements View.OnClickListen
     private String email;
     private String userid;
     private TextView textviewnomPrenom;
-    private TextView editNom, editPrenom, editEmail, editPhoneNumber, editDepartement;
+    private TextView editNom, editPrenom, editEmail, editPhoneNumber;
     private final String TAG = this.getClass().getName().toUpperCase();
 
 
@@ -61,7 +59,6 @@ public class ProfileProf extends AppCompatActivity implements View.OnClickListen
         editNom = findViewById(R.id.editNom);
         editPrenom = findViewById(R.id.editPrenom);
         editEmail = findViewById(R.id.editEmail);
-        editDepartement = findViewById(R.id.editDepartement);
         editPhoneNumber = findViewById(R.id.editphone);
 
 
@@ -112,6 +109,6 @@ public class ProfileProf extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View view) {
-        startActivity(new Intent(this, DashboardProf.class));
+        startActivity(new Intent(this, DashboardEtud.class));
     }
 }

@@ -1,4 +1,4 @@
-package com.example.firsttest;
+package com.example.firsttest.adminUI;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.firsttest.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class EditProf extends AppCompatActivity {

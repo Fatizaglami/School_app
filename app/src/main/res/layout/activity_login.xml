@@ -10,7 +10,7 @@
         android:id="@+id/topView"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:background="#a2d9ff"
+        android:background="#E5989B"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,29 +22,58 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topView" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_person" />
 
-    <TextView
-        android:id="@+id/topText"
-        android:layout_width="282dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="28dp"
-        android:text="Already Have an Account?"
-        android:textColor="@color/white"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/topView"
-        app:layout_constraintEnd_toStartOf="@+id/imageView" />
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/topView"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="122dp">
+
+        <RadioGroup
+            android:id="@+id/grpRadion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/btnProf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/teal_700"
+                android:text="Professeur"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/btnEtud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/teal_700"
+                android:text="Etudiant"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/btnAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/teal_700"
+                android:text="Admin"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </RadioGroup>
+    </LinearLayout>
 
     <EditText
         android:id="@+id/inputEmail"
@@ -87,55 +116,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.473" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        app:layout_constraintBaseline_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassword"
-        app:layout_constraintVertical_bias="0.55"
-        tools:layout_editor_absoluteX="9dp">
 
-        <RadioGroup
-            android:id="@+id/grpRadion"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/btnProf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:buttonTint="#2196F3"
-                android:text="Professeur"
-                android:textColor="@color/material_dynamic_neutral_variant50"
-                android:textSize="16sp" />
-
-            <RadioButton
-                android:id="@+id/btnEtud"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:buttonTint="#2196F3"
-                android:text="Etudiant"
-                android:textColor="@color/material_dynamic_neutral50"
-                android:textSize="16sp" />
-            <RadioButton
-                android:id="@+id/btnAdmin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:buttonTint="#2196F3"
-                android:text="Admin"
-                android:textColor="@color/material_dynamic_neutral50"
-                android:textSize="16sp" />
-        </RadioGroup>
-    </LinearLayout>
 
     <Button
         android:id="@+id/btnLogin"
@@ -144,22 +125,27 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="120dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/round_bg"
-        android:text="Login"
+        android:textColorHighlight="@color/purple_700"
+        android:backgroundTint="@color/purple_700"
+        android:shadowColor="@color/purple_200"
+        android:background="@drawable/btn"
+        android:text="Se connecter"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:textColor="@color/teal_700"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+
 
     <TextView
         android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="FORGOT PASSWORD?"
-        android:textColor="@color/purple_500"
+        android:text="Mot de passe oublie?"
+        android:textColor="@color/purple_700"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -171,7 +157,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="OR"
+        android:text="Ou bien"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -179,16 +165,16 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="25dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="130dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orText">
+        app:layout_constraintTop_toBottomOf="@+id/orText"
+
+    >
 
         <ImageView
             android:id="@+id/googleLogin"
@@ -210,8 +196,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:text="New User? Register Now"
-        android:textColor="#18B7CC"
+        android:text="Nouveau professeur ? veuillez s'inscrire"
+        android:textColor="@color/teal_700"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
