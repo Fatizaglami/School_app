@@ -15,7 +15,8 @@
         android:theme="@style/Theme.FirstTest">
         <activity
             android:name=".DownloadEmploi"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"/>
         <activity
             android:name=".etudUI.DashboardEtud"
             android:exported="false" />
@@ -27,7 +28,9 @@
             android:exported="false" />
         <activity
             android:name=".adminUI.EmploiActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"
+            />
         <activity
             android:name=".adminUI.show_item_etud"
             android:exported="false"
