@@ -82,6 +82,7 @@ public class ProfileAdmin extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 if (dataSnapshot.exists() && dataSnapshot.getChildrenCount() > 0) {
                     nom = dataSnapshot.child("nom").getValue(String.class);
                     prenom = dataSnapshot.child("prenom").getValue(String.class);

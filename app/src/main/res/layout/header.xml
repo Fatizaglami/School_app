@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:orientation="horizontal"
+    android:layout_height="215dp"
+    android:orientation="vertical"
     android:background="@color/register_bk_color"
-    android:gravity="bottom"
+    android:gravity="center_vertical"
     android:padding="50dp"
 
     >
 
+
     <ImageView
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="88dp"
+        android:layout_height="95dp"
         android:layout_alignParentStart="true"
-        android:src="@drawable/ic_login_hero" />
+        android:src="@drawable/iconapp" />
 
     <TextView
-        android:layout_width="152dp"
-        android:layout_height="39dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-
-
+        android:fontFamily="cursive"
         android:gravity="bottom"
-        android:text="Miola App"
+        android:text="Zaglami's app"
         android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
 

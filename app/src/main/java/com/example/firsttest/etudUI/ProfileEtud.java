@@ -48,7 +48,7 @@ public class ProfileEtud extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_prof);
+        setContentView(R.layout.activity_profile_etud);
 
         backImage = findViewById(R.id.imageBack);
         backImage.setOnClickListener(this);

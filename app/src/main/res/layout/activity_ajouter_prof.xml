@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
+
     tools:context=".adminUI.AjouterProf"
     android:orientation="vertical"
     android:gravity="center"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:layout_margin="10dp"
     >
 
 
@@ -147,15 +159,16 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAdd"
-        android:layout_below="@+id/telProf"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_below="@+id/telProf"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/round_bg"
+        android:layout_marginTop="5dp"
         android:paddingBottom="10dp"
         android:text="Ajouter" />
 
 
-
-
 </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

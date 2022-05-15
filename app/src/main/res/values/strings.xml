@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">school_Manager1</string>
+    <string name="app_name">Zaglami\'s app</string>
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
     <string name="phone">PhoneNumber</string>

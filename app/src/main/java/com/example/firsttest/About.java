@@ -19,25 +19,23 @@ public class About extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         Element adsElement = new Element();
-        adsElement.setTitle("MIOLA APP");
+        adsElement.setTitle("Zaglami's app");
 
         View aboutPage = new AboutPage(this)
                 .isRTL(false)
-                .setImage(R.drawable.ic_login_hero)
-                .setDescription("L’objectif est\tde\tdévelopper\tune\tapplication\tmobile\tqui\tpermet principalement de\tgérer\tla\t\n" +
-                        "communication\t et\t l’échange\t de\t données\t et\t de\t documents\t entre\t les\tmembres\t de\t la\t filière\t\n" +
+               // .setImage(R.drawable.ic_login_hero)
+                .setImage(R.drawable.iconapp)
+                .setDescription("L’application a pour objectif la \tgestion\tde la\t\n" +
+                        "communication\t et\t l’échange\t entre\t les\tprofesseurs et les etudiants\t de\t la\t filière\t\n" +
                         "MIOLA.\t\n" +
-                        "Les\téventuels\tutilisateurs\tde\tl’application\tsont\tles\tprofesseurs\tet\tles\tétudiants\tqui\tpeuvent\t\n" +
-                        "consulter\tles\tmessages\tet\tles\tdocuments\treçus\tdans\tleurs boites de\tmessagerie et\tpeuvent\tà\t\n" +
-                        "leurs\t tours\t envoyer\t des\t messages\t et\t des\t documents\t aux\t autres membres de la\t filière.\t\n" +
-                        "L’envoi\tde\tdocuments\tet\tde\tmessages peut concerner un\tou\tplusieurs\tprofesseurs\tet/ou\tun\t\n" +
-                        "ou\tplusieurs\tétudiants.")
+                        "Les\tutilisateurs\tde\tl’application\tsont\tles\tprofesseurs\tet\tles\tétudiants\tqui\tpeuvent\t\n" +
+                        "telecharger\tleurs emplois du temps.\t\n ")
                 .addItem(new Element().setTitle("Version 1.0"))
                 .addItem(adsElement)
-                .addGroup("Connect Us")
-                .addEmail("nouhaila.elfahsi20@gmail.com")
+                .addGroup("Contactez nous")
+                .addEmail("fatimazahra.zaglami@um5r.ac.ma")
                 .addGitHub("https://github.com/Fatizaglami")
-                .addFacebook("nouhaila elfahsi")
+                .addFacebook("fatima zahra zaglami")
                 .addItem(createCopyRight())
                 .create();
         setContentView(aboutPage);
@@ -46,7 +44,7 @@ public class About extends AppCompatActivity {
 
     private Element createCopyRight() {
         Element copyright = new Element();
-        String copyrightString = String.format("Copyright %d by MiolaAPP", Calendar.getInstance().get(Calendar.YEAR));
+        String copyrightString = String.format("Copyright %d by Zaglami", Calendar.getInstance().get(Calendar.YEAR));
         copyright.setTitle(copyrightString);
         copyright.setGravity(Gravity.CENTER);
         return copyright;

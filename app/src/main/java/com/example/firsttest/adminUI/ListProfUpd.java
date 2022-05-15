@@ -71,9 +71,20 @@ public class ListProfUpd extends AppCompatActivity implements RecycleViewOnItemC
 
 
     @Override
+    protected void onPause() {
+        super.onPause();
+
+        myAdater.notifyDataSetChanged();
+        getListProfs();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
+
+        myAdater.notifyDataSetChanged();
         getListProfs();
+
     }
 
      public void getListProfs() {
@@ -117,6 +128,7 @@ public class ListProfUpd extends AppCompatActivity implements RecycleViewOnItemC
     @Override
     public void onItemClick(int position) {
        String us = db.collection("professeur").getId();
+
         Intent intent=new Intent(ListProfUpd.this, show_item_prof.class);
        // intent.putExtra("prof_photo",professeurArrayList.get(position).getPhoto());
         intent.putExtra("prof_nom",professeurArrayList.get(position).getNom());

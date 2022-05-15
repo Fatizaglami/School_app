@@ -29,7 +29,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:foregroundGravity="center"
-            android:src="@drawable/profile"
+            android:src="@drawable/et6"
             app:civ_border_color="#C0C0C0"
             app:civ_border_width="1dp"
             app:layout_constraintTop_toTopOf="parent"

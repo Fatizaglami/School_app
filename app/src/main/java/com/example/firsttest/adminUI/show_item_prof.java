@@ -78,7 +78,7 @@ public class show_item_prof extends AppCompatActivity implements View.OnClickLis
                 break;
 
             case R.id.button_email:
-                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("email:"));
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"));
                 emailIntent.putExtra(Intent.EXTRA_EMAIL,  new String[] {email});
                 startActivity(emailIntent);
                 break;

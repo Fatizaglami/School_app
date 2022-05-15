@@ -65,7 +65,8 @@
                             android:layout_marginTop="12dp"
                             android:textColor="@color/black"
                             android:text="Profs"
-                            android:textSize="18sp"
+                            android:fontFamily="cursive"
+                            android:textSize="30dp"
                             android:textStyle="bold"/>
                     </LinearLayout>
 
@@ -97,7 +98,8 @@
                             android:textColor="@color/black"
                             android:text="Etudiants"
                             android:textStyle="bold"
-                            android:textSize="18sp"/>
+                            android:fontFamily="cursive"
+                            android:textSize="30dp"/>
                     </LinearLayout>
 
 
@@ -128,7 +130,8 @@
                             android:textColor="@color/black"
                             android:text="Emploi"
                             android:textStyle="bold"
-                            android:textSize="18dp"/>
+                            android:fontFamily="cursive"
+                            android:textSize="30dp"/>
                     </LinearLayout>
 
 

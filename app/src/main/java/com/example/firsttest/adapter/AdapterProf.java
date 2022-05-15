@@ -43,14 +43,9 @@ public class AdapterProf extends RecyclerView.Adapter<AdapterProf.myViewHolder> 
    Context context;
    ArrayList<Professeur> professeurArrayList;
   static RecycleViewOnItemClick recycleViewOnItemClick;
-    //EditText editnom,editprenom,editdep,editemail,edittel;
     FirebaseFirestore db;
 
 
-  /*  public AdapterProf(Context context, ArrayList<Professeur> professeurArrayList) {
-        this.context = context;
-        this.professeurArrayList = professeurArrayList;
-    }*/
 
     public AdapterProf(Context context, ArrayList<Professeur> professeurArrayList, RecycleViewOnItemClick recycleViewOnItemClick) {
         this.context = context;
